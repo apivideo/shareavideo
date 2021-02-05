@@ -1,0 +1,59 @@
+head
+ title share a video
+ link(rel="stylesheet" href="/style.css")
+ script(async src='https://www.googletagmanager.com/gtag/js?id=G-N9E9YP1HGF')
+ <script src="page.js"></script>
+ <script src="sdk.js"></script>
+ script. 
+   var __nspid="isrtzw";
+   var __nsptags=[];
+   (function(w, d) { var x = function() {
+     var j=d.createElement("script");j.type="text/javascript";j.async=true;
+     j.src="http"+("https:"===d.location.protocol?"s://cs":"://c")+".ns1p.net/p.js?a="+__nspid;
+     d.body.appendChild(j); }
+     if(w.addEventListener) { w.addEventListener("load", x, false); }
+     else if(w.attachEvent) { w.attachEvent("onload", x); }
+     else { w.onload = x; }
+     }(window, document));
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+     gtag('config', 'G-N9E9YP1HGF');
+body
+  header.header 
+
+    
+    
+  block content
+   
+      
+    
+    if broadcasting
+      h1 The Movie has already started. Click the image to enter the theatre.
+      p
+      h2 Make sure your phone is silenced.
+      #video-player
+        #thumb-live-indicator.active
+        #videoDiv
+          #{iframe}
+        #imageDiv.hidden
+          #{livestream}
+    else
+      h1 Click the image to begin the livestream.  It'll take a few seconds to buffer up, and then we'll get you into the theatre.
+      p
+      h2 Make sure your phone is silenced.
+      #video-player
+         #thumb-live-indicator
+         #videoDiv
+           |#{livestream}
+         #imageDiv
+          img.image(src= thumbnail)
+  if broadcasting
+    a(href=player) Watch Stream
+    #video-title.active
+      p Video is playing Click Image to enter the theatre
+  else
+    #video-title
+      p #{description} 
+      
+      
