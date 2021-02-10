@@ -8,15 +8,47 @@ window.onload = function(){
         var movie = urlParams.get('movie');
         console.log(movie);
 
+        if(document.getElementsByClassName('image')[0]){
+            console.log("theres an image");
+            //add the event listener fpr clicking the image
+            document.getElementsByClassName('image')[0]
+            .addEventListener('click', function (event) {
+                // do something
+                console.log("movie click");
+                startStream(movie, 0);
+            });
+    
 
-        document.getElementsByClassName('image')[0]
-                .addEventListener('click', function (event) {
-                    // do something
-                    console.log("movie click");
-                    startStream(movie, 0);
-                });
- 
-            }
+        }else{
+            console.log("theres no image");
+
+                    //in the image is hidden - video has started
+                //when you click on the video
+                    //make a sync button
+                   
+                        //connect to the player
+                        window.player = new PlayerSdk("#imageDiv");
+                        console.log("player connected");
+                      //  liveSync();
+                   
+
+        }
+
+
+
+}
+
+function liveSync(){
+    //we can add a "sync button"
+    document.getElementById("video-title").innerHTML = "Click to sync";
+    document.getElementById("video-title").addEventListener('click', function (event) {
+        // sync player to newest bit of live available....
+        player.mute();
+        player.setCurrentTime(99999); 
+        console.log("sync click");
+    });
+
+}
 
 function startStream(movie, counter){
     console.log(movie);
@@ -29,6 +61,7 @@ function startStream(movie, counter){
     oReq.onload = function (oEvent) {
             console.log("video started: ",movieUpload );
             var livestreamid  = document.getElementById("videoDiv").innerHTML;
+            document.getElementById("videoDiv").innerHTML="";
             console.log("liveid", livestreamid);
             var videos = ['vi74TmfoJyPmVJVnIl4jzMLA', livestreamid];
 
@@ -58,6 +91,9 @@ function startStream(movie, counter){
                  if(counter >0){
                      //live video
                      videoOptions= liveOptions;
+                     //add teh sync button
+                 //   liveSync();
+
                  }
                 console.log("player options", videoOptions);
 

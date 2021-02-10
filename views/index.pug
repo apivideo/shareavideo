@@ -44,20 +44,22 @@ body
       h2 Make sure your phone is silenced.
       #video-player
          #thumb-live-indicator
-         #videoDiv
+         #videoDiv.hidden
            |#{livestream}
          #imageDiv
           img.image(src= thumbnail)
   if broadcasting
-    a(href=player) Watch Stream
     #video-title.active
       p Video is playing Click Image to enter the theatre
   else
     #video-title
       p #{description} 
+
   
-  #footer
+  .footer
     p <a href="/">Return to the the lobby</a>. Sorry, the popcorn machine is broken.
+  p
+  .footer  
     p This app was created with <a href="https://api.video">api.video</a>.<br/>
     p Get the <a href="https://github.com/dougsillars/ffprobeavideo">sample code</a>, and read about <a href="https://a.video/works/ffprobe-a-video">how we built the demo.</a><br/>
     p More sample apps can be found at <a href="https://a.video">a.video</a>.
