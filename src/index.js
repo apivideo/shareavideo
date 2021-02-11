@@ -135,14 +135,6 @@ app.post ('/start', (req,res) => {
 		var videoLink = videoUrls[counter];
 		var rtmpDestination = "rtmp://broadcast.api.video/s/"+streamKeys[counter];
 		
-		/*
-		var ops = [
-			'-i', videoLink, 
-			  '-preset', 'ultrafast', '-tune', 'zerolatency', 
-				'-f', 'flv', rtmpDestination		
-		];
-
-		*/
 		var ops = [
 			'-i', videoLink, 
 			  '-preset', 'ultrafast', '-tune', 'zerolatency', 
