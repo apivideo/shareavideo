@@ -1,0 +1,38 @@
+{
+  "name": "videoanalytics",
+  "version": "1.0.0",
+  "description": "upload videos to discord",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon  src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "startprod": "babel-node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dougsillars/videoUploadToDiscord.git"
+  },
+  "keywords": [
+    "video",
+    "upload",
+    "discordjs"
+  ],
+  "author": "doug",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dougsillars/videoUploadToDiscord/issues"
+  },
+  "homepage": "https://github.com/dougsillars/videoUploadToDiscord#readme",
+  "dependencies": {
+    "@api.video/nodejs-client": "^2.0.3",
+    "@api.video/nodejs-sdk": "^1.8.5",
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "ffmpeg": "0.0.4",
+    "node-media-server": "^2.2.4",
+    "nodemon": "^2.0.6",
+    "pug": "^3.0.0",
+    "request": "^2.88.2"
+  }
+}
