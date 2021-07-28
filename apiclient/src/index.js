@@ -49,11 +49,9 @@ nms.run();
 //apivideo
 
 
-//const apiVideoClient = require('@api.video/nodejs-client');
-//
 
 const apiVideoClient = require('@api.video/nodejs-client');
-//import apiVideoClient from '@api.video/nodejs-client';
+
 
 //if you chnage the key to sandbox or prod - make sure you fix the delegated toekn on the upload page
 const apiVideoKey = process.env.apiProductionKey;
@@ -77,7 +75,6 @@ app.get('/movie', (req, res) => {
 	}
 	
 	//get data on both movies:
-	//const apiVideoClient = new ApiVideoClient({ apiKey: "YOUR_API_TOKEN" });
 	const client = new apiVideoClient({ apiKey: apiVideoKey });
 	let allLiveStreams = client.liveStreams.list();
 	var videos =[{
